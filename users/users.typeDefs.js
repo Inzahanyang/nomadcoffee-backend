@@ -3,18 +3,18 @@ import { gql } from "apollo-server-core";
 export default gql`
   type User {
     id: Int!
+    username: String!
     email: String!
+    name: String!
+    location: String
+    password: String!
+    avatarURL: String
+    githubUsername: String
     createdAt: String!
     updatedAt: String!
   }
-  type Query {
-    users: [User]
-    user(id: Int!): User
-  }
 
-  type Mutation {
-    createUser(email: String!): User
-    deleteUser(id: Int!): User
-    updateUser(id: Int!, email: String!): User
+  type Query {
+    user(id: Int!): User
   }
 `;
