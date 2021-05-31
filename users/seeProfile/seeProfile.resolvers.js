@@ -5,9 +5,9 @@ export default {
     seeProfile: (_, { username }) =>
       client.user.findUnique({
         where: { username },
-        select: {
-          username: true,
-          githubUsername: true,
+        include: {
+          followers: true,
+          followings: true,
         },
       }),
   },
