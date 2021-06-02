@@ -15,8 +15,4 @@ export default gql`
     createdAt: String!
     updatedAt: String!
   }
-
-  type Query {
-    user(id: Int!): User
-  }
 `;
