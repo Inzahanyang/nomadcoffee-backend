@@ -7,10 +7,10 @@ import { getUser } from "./users/users.util";
 
 const PORT = process.env.PORT;
 const apollo = new ApolloServer({
-  resolvers,
-  typeDefs,
   playground: true,
   introspection: true,
+  resolvers,
+  typeDefs,
   context: async ({ req }) => {
     return {
       loggedInUser: await getUser(req.headers.token),
